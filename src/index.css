@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Prompt&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Prompt','Montserrat',sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 62px;
+  height: calc(100% - 62px);
+}
