@@ -144,7 +144,7 @@ export function ContactUs() {
                 </Wrapper>
             </FormBlock>
             <ImageBlock>
-                <img src={Contact} />
+                <img src={Contact} alt='contact-us' />
             </ImageBlock>
         </ContactUsWrapper>
     );

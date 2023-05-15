@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import Logo from '../assets/icons8.png';
+import Logo from '../assets/logo.jpeg';
 import { Link } from "react-router-dom";
 import { FlexBox } from "./common-styles";
 
@@ -54,9 +54,9 @@ export function Header() {
     return (
         <HeaderWrapper>
             <HeaderContainer>
-            <FlexBox margin="0 25px 0 0" height="50px">
+            <FlexBox margin="0 25px 0 0" height="50px" width="150px" justifyContent="space-between">
                 <img src={Logo} alt="logo" height={50} />
-                <h2>avenga</h2>
+                <h2>aarvam</h2>
             </FlexBox>
             <Navbar>
                 <Navlink to="#services">

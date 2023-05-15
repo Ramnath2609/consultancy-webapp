@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { FlexBox } from "./common-styles";
-import Leader from '../assets/leader-trans.png';
 import { servicesData } from "../data";
 import Arrow from '../assets/arrow.png'
 import { useCallback, useState } from "react";
@@ -93,16 +92,6 @@ const ImageBlock = styled(FlexBox)`
     position: relative;
     flex: 0 1 auto;
     margin-right: 30px;
-`;
-
-const Image = styled.img`
-    height: auto;
-    max-height: 100%;
-    max-width: calc(100% - 430px);
-    position: absolute;
-    right: 0;
-    top: 45px;
-    z-index: 1;
 `;
 
 const Container = styled.div`
