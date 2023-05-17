@@ -32,12 +32,10 @@ const Tag = styled.div`
     color: #0e0f11;
     font-size: 12px;
     line-height: 1;
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
+    padding: 10px 14px;
     border: none;
     border-radius: 45px;
     cursor: pointer;
-    padding: 14px 45px;
 `;
 
 const VerticalTabsWrapper = styled.div`

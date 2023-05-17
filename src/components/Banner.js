@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 import { FlexBox } from "./common-styles";
 
 const BannerText = styled.p`
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 700;
     margin-left: 30px;
     z-index: 5;
@@ -26,8 +26,8 @@ const TypewriterBlock = styled.span`
     border: 1px solid;
     border-radius: 65px;
     color: #00c2ff;
+    margin-left: 14px;
     .Typewriter {
-        margin-left: 14px;
         display: inline-block;
     }
 `;
@@ -42,7 +42,7 @@ const BannerBlock = styled(FlexBox)`
 
 const Image = styled.img`
     position: absolute;
-    width: 50%;
+    width: 45%;
     right: 0;
     z-index: 1;
     margin-right: 30px;
@@ -54,17 +54,16 @@ const Image = styled.img`
 export function Banner() {
     return (
         <BannerBlock height="100vh" padding="0 0 85px 0">
-            <BannerText>Your competitive <br/> advantage <br />
+            <BannerText>Accelerating success<br/> through 
                 <TypewriterBlock>
-                in 
-                <Typewriter
-                    options={{
-                        strings: ['engineering', 'career', 'software'],
-                        autoStart: true,
-                        loop: true,
-                    }}
-                    />
-                </TypewriterBlock>
+                    <Typewriter
+                        options={{
+                            strings: ['technology', 'engineering', 'AI', 'innovation'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                        />
+                    </TypewriterBlock>
             </BannerText>
             <Image src={BannerImage} />
         </BannerBlock>

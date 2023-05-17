@@ -3,7 +3,7 @@ export const servicesData = [
     {
         id: 1,
         title: 'Solution Engineering',
-        tags: ['Mobile development', 'Web development', 'QA', 'UI/ UX'],
+        tags: ['Mobile development', 'Web development', 'QA', 'UI/ UX', 'Technology consulting', 'Research and development'],
         description: 'Our clients choose Aarvam because we deliver systematic solutions and not stand-alone bits of software. This business-driven approach to solution engineering lets us design, develop, and implement software that alleviates intricate business scenarios at the core.'
     },
     {
@@ -24,13 +24,13 @@ export const technologiesData = [
     {
         id: 2,
         title: 'Automation',
-        tags: ['DevOps Services', 'AQA Services', 'RPA Services'],
+        tags: ['Devops / SRE services', 'Infrastructure automation'],
         description: 'Render your products and services immune to business disruptions. Beat competition by automating delivery pipelines, testing, and manual processes to scale opportunities and eliminate threats on the go.'
     },
     {
         id: 3,
         title: 'Data and AI',
-        tags: ['Application support', 'Infrastructure maintenance'],
+        tags: ['Data consulting', 'Big Data and AI', 'ML and AI'],
         description: 'Improve decision-making, enhance business flexibility, and tap into predictable planning by mastering the power of data. Aarvam helps businesses worldwide gather, process, visualize, and apply data in a manner that makes it relevant for the company’s success.'
     },
     {
