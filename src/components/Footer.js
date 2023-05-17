@@ -15,7 +15,7 @@ const CopyrightText = styled.p`
 export function Footer() {
     return (
         <FooterWrapper>
-            <CopyrightText>© 2023 Avenga. All rights reserved.</CopyrightText>
+            <CopyrightText>© 2023 Aarvam Technology Solutions.Inc. All rights reserved.</CopyrightText>
         </FooterWrapper>
     );
 }

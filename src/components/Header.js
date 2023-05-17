@@ -1,7 +1,8 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 import Logo from '../assets/logo.jpeg';
 import { Link } from "react-router-dom";
 import { FlexBox } from "./common-styles";
+import Hamburger from '../assets/hamburger.svg'
 
 const HeaderWrapper = styled.header`
     background-color: #fff;
@@ -22,6 +23,9 @@ const Navbar = styled.nav`
     overflow: visible;
     position: static;
     z-index: auto;
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const Navlink = styled(Link)`
@@ -43,10 +47,20 @@ const HeaderContainer = styled.div`
     margin: 0 auto;
     max-width: 1110px;
     padding: 0 15px;
-    width: 100%;
     padding-bottom: 0;
     padding-right: 5px;
     padding-top: 35px;
+`;
+
+const HamburgerHolder = styled(FlexBox)`
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    @media (min-width: 1024px) {
+        display: none;
+    }
 `;
 
 
@@ -65,9 +79,6 @@ export function Header() {
                 <Navlink to="#technologies">
                     Technologies
                 </Navlink>
-                <Navlink to="#insights">
-                    Insights
-                </Navlink>
                 <Navlink to="#contact">
                     Contact
                 </Navlink>
@@ -75,6 +86,9 @@ export function Header() {
                     About
                 </Navlink>
             </Navbar>
+                <HamburgerHolder>
+                    <img src={Hamburger} alt="mobile-menu" height={35} />
+                </HamburgerHolder>
             </HeaderContainer>
         </HeaderWrapper>
     );

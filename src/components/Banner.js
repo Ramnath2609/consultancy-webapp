@@ -6,6 +6,14 @@ import { FlexBox } from "./common-styles";
 const BannerText = styled.p`
     font-size: 64px;
     font-weight: 700;
+    margin-left: 30px;
+    z-index: 5;
+    @media (max-width: 1024px) {
+        font-size: 50px;
+    }
+    @media (max-width: 768px) {
+        font-size: 36px;
+    }
 `;
 
 const TypewriterBlock = styled.span`
@@ -36,11 +44,16 @@ const Image = styled.img`
     position: absolute;
     width: 50%;
     right: 0;
+    z-index: 1;
+    margin-right: 30px;
+    @media (max-width: 1024px) {
+        width: 45%;
+    }
 `;
 
 export function Banner() {
     return (
-        <BannerBlock height="650px">
+        <BannerBlock height="100vh" padding="0 0 85px 0">
             <BannerText>Your competitive <br/> advantage <br />
                 <TypewriterBlock>
                 in 

@@ -1,4 +1,4 @@
-import { Header, Services, ContactUs, Partnerships, Technologies, Footer } from "./components";
+import { Header, Services, ContactUs, Technologies, Footer, AboutUs } from "./components";
 import { BrowserRouter } from 'react-router-dom'
 import { Banner } from "./components/Banner";
 
@@ -10,8 +10,8 @@ function App() {
         <main>
           <Banner />
         <Services />
-        <Partnerships />
         <Technologies />
+        <AboutUs />
         <ContactUs />
         <Footer />
         </main>

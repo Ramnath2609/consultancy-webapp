@@ -6,6 +6,7 @@ const ContactUsWrapper = styled(GridLayout)`
     height: 550px;
     grid-template: 100% / 50% 50%;
     justify-content: center;
+    background-color: #bff0ff;
 `;
 
 const FormBlock = styled.div`
