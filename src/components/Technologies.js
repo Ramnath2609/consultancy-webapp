@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FlexBox } from "./common-styles";
 import { technologiesData } from "../data";
-import Arrow from '../assets/white-arrow.png'
+import Arrow from "../assets/white-arrow.png";
 import { useCallback, useState } from "react";
 
 const ServicesWrapper = styled.div`
@@ -53,8 +53,8 @@ const TabItem = styled.div`
     border-left-color: transparent;
     border-radius: 0 8px 0 0;
     border-width: 1px;
-    border-right-color: ${props => props.isActive ? '#fff' : 'none'};;
-    border-top-color: ${props => props.isActive ? '#fff' : 'none'};;
+    border-right-color: ${props => (props.isActive ? "#fff" : "none")};;
+    border-top-color: ${props => (props.isActive ? "#fff" : "none")};;
     margin-left: auto;
     display: inline-flex;
     font-size: 18px;
@@ -70,12 +70,12 @@ const TabItem = styled.div`
     color: #191919;
     width: 175px;
     > div {
-        display: ${props => props.isActive ? 'inline-flex' : 'none'};
+        display: ${props => (props.isActive ? "inline-flex" : "none")};
     }
     &:hover {
         > div {
             display: inline-flex;
-            opacity: ${props => props.isActive ? '1' : '0.5'};;
+            opacity: ${props => (props.isActive ? "1" : "0.5")};;
         }
     }
     `;
@@ -116,37 +116,37 @@ const ArrowImage = styled.img`
 `;
 
 export function Technologies() {
-    const [activeTab, setActiveTab] = useState(technologiesData[0]);
+  const [activeTab, setActiveTab] = useState(technologiesData[0]);
 
-    const onClick = useCallback((id) => {
-        const seletedTab = technologiesData.find((data) => data.id === id);
-        setActiveTab(seletedTab);
-    }, []);
+  const onClick = useCallback((id) => {
+    const seletedTab = technologiesData.find((data) => data.id === id);
+    setActiveTab(seletedTab);
+  }, []);
 
-    return (
-        <ServicesWrapper>
-            <Container>
-            <HeaderText>Technologies</HeaderText>
-            <FlexBox height="100%" justifyContent="space-between" alignItems="flex-start">
-                <ImageBlock flexDirection="column" height="100%" alignItems="flex-start">
-                <ButtonsContainer>
-                    {activeTab.tags.map((tag) => <Tag>{tag}</Tag>)}
-                </ButtonsContainer>
-                <Info>{activeTab.description}</Info>
-                </ImageBlock>
-            <VerticalTabsWrapper>
-                {technologiesData.map((service) => {
-                    const { title, id } = service;
-                    return (
-                        <TabItem isActive={activeTab.id === id} key={id} onClick={() => onClick(id)}>
-                            {title}
-                            <IconHolder><ArrowImage src={Arrow} /></IconHolder>
-                        </TabItem>
-                    )
-                })}
-            </VerticalTabsWrapper>
-            </FlexBox>
-            </Container>
-        </ServicesWrapper>
-    );
+  return (
+    <ServicesWrapper id="technologies">
+      <Container>
+        <HeaderText>Technologies</HeaderText>
+        <FlexBox height="100%" justifyContent="space-between" alignItems="flex-start">
+          <ImageBlock flexDirection="column" height="100%" alignItems="flex-start">
+            <ButtonsContainer>
+              {activeTab.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
+            </ButtonsContainer>
+            <Info>{activeTab.description}</Info>
+          </ImageBlock>
+          <VerticalTabsWrapper>
+            {technologiesData.map((service) => {
+              const { title, id } = service;
+              return (
+                <TabItem isActive={activeTab.id === id} key={id} onClick={() => onClick(id)}>
+                  {title}
+                  <IconHolder><ArrowImage src={Arrow} /></IconHolder>
+                </TabItem>
+              );
+            })}
+          </VerticalTabsWrapper>
+        </FlexBox>
+      </Container>
+    </ServicesWrapper>
+  );
 }

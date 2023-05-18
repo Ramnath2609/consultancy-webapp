@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { FlexBox, GridLayout } from './common-styles';
-import Contact from '../assets/contact.jpg';
+import styled from "styled-components";
+import { FlexBox, GridLayout } from "./common-styles";
+import Contact from "../assets/contact.jpg";
 
 const ContactUsWrapper = styled(GridLayout)`
     height: 550px;
@@ -119,34 +119,34 @@ const ImageBlock = styled(FlexBox)`
 
 
 export function ContactUs() {
-    return (
-        <ContactUsWrapper>
-            <FormBlock>
-                <Wrapper>
-                <p>Start a conversation</p>
-                <p>We’d like to hear from you. Use the contact form below and we’ll get back to you shortly.</p>
-                <FullHeightForm>
-                    <FieldWrapper>
-                        <StyledLabel htmlFor='fullName'><span>Full name</span></StyledLabel>
-                        <StyledInput type='text' name="fullName" />
-                    </FieldWrapper>
-                    <FieldWrapper>
-                        <StyledLabel htmlFor='emailAddress'><span>Email address</span></StyledLabel>
-                        <StyledInput type='text' name="emailAddress" />
-                    </FieldWrapper>
-                    <FieldWrapper>
-                        <StyledLabel htmlFor='message'><span>Message</span></StyledLabel>
-                        <StyledInput type='text' name="message" />
-                    </FieldWrapper>
-                    <FieldWrapper>
-                        <Button>Send</Button>
-                    </FieldWrapper>
-                </FullHeightForm>
-                </Wrapper>
-            </FormBlock>
-            <ImageBlock>
-                <img src={Contact} alt='contact-us' />
-            </ImageBlock>
-        </ContactUsWrapper>
-    );
+  return (
+    <ContactUsWrapper id='contact'>
+      <FormBlock>
+        <Wrapper>
+          <p>Start a conversation</p>
+          <p>We’d like to hear from you. Use the contact form below and we’ll get back to you shortly.</p>
+          <FullHeightForm>
+            <FieldWrapper>
+              <StyledLabel htmlFor='fullName'><span>Full name</span></StyledLabel>
+              <StyledInput type='text' name="fullName" />
+            </FieldWrapper>
+            <FieldWrapper>
+              <StyledLabel htmlFor='emailAddress'><span>Email address</span></StyledLabel>
+              <StyledInput type='text' name="emailAddress" />
+            </FieldWrapper>
+            <FieldWrapper>
+              <StyledLabel htmlFor='message'><span>Message</span></StyledLabel>
+              <StyledInput type='text' name="message" />
+            </FieldWrapper>
+            <FieldWrapper>
+              <Button>Send</Button>
+            </FieldWrapper>
+          </FullHeightForm>
+        </Wrapper>
+      </FormBlock>
+      <ImageBlock>
+        <img src={Contact} alt='contact-us' />
+      </ImageBlock>
+    </ContactUsWrapper>
+  );
 }

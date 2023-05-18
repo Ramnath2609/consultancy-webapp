@@ -1,8 +1,9 @@
-import styled from "styled-components";
-import Logo from '../assets/logo.jpeg';
-import { Link } from "react-router-dom";
+import { useCallback, useState } from "react";
+import styled, { css } from "styled-components";
+import Logo from "../assets/logo.jpeg";
+import { HashLink } from "react-router-hash-link";
 import { FlexBox } from "./common-styles";
-import Hamburger from '../assets/hamburger.svg'
+import Hamburger from "../assets/hamburger.svg";
 
 const HeaderWrapper = styled.header`
     background-color: #fff;
@@ -23,12 +24,27 @@ const Navbar = styled.nav`
     overflow: visible;
     position: static;
     z-index: auto;
+    transition: all 0.3s ease-in;
     @media (max-width: 1024px) {
-        display: none;
+        display: ${({ $isMobileMenuOpen }) => ($isMobileMenuOpen ? "flex" : "none")};
+        ${({ $isMobileMenuOpen }) => ($isMobileMenuOpen ? mobileMenuSnippet : "")}
     }
 `;
 
-const Navlink = styled(Link)`
+const mobileMenuSnippet = css`
+    position: absolute;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+    top: 100px;
+    left: 0;
+    box-shadow: 0px 5px 5px 5px #eee;
+    > a {
+        padding: 14px;
+    }
+`;
+
+const Navlink = styled(HashLink)`
     display: inline-flex;
     text-decoration: none;
     color: #191919;
@@ -46,10 +62,8 @@ const HeaderContainer = styled.div`
     transition: padding .3s ease-in-out;
     margin: 0 auto;
     max-width: 1110px;
-    padding: 0 15px;
-    padding-bottom: 0;
-    padding-right: 5px;
-    padding-top: 35px;
+    padding: 15px 15px;
+    box-sizing: border-box;
 `;
 
 const HamburgerHolder = styled(FlexBox)`
@@ -65,31 +79,35 @@ const HamburgerHolder = styled(FlexBox)`
 
 
 export function Header() {
-    return (
-        <HeaderWrapper>
-            <HeaderContainer>
-            <FlexBox margin="0 25px 0 0" height="50px" width="150px" justifyContent="space-between">
-                <img src={Logo} alt="logo" height={50} />
-                <h2>aarvam</h2>
-            </FlexBox>
-            <Navbar>
-                <Navlink to="#services">
+  const [isMobileMenuOpen, toggleMobileMenu] = useState(false);
+
+  const onMenuClick = useCallback(() => toggleMobileMenu((prevState) => !prevState), []);
+
+  return (
+    <HeaderWrapper>
+      <HeaderContainer>
+        <FlexBox margin="0 25px 0 0" height="50px" width="150px" justifyContent="space-between">
+          <img src={Logo} alt="logo" height={50} />
+          <h2>aarvam</h2>
+        </FlexBox>
+        <Navbar $isMobileMenuOpen={isMobileMenuOpen}>
+          <Navlink smooth to="#services" onClick={onMenuClick}>
                     Services
-                </Navlink>
-                <Navlink to="#technologies">
+          </Navlink>
+          <Navlink smooth to="#technologies" onClick={onMenuClick}>
                     Technologies
-                </Navlink>
-                <Navlink to="#contact">
+          </Navlink>
+          <Navlink smooth to="#contact" onClick={onMenuClick}>
                     Contact
-                </Navlink>
-                <Navlink to="#about">
+          </Navlink>
+          <Navlink smooth to="#about" onClick={onMenuClick}>
                     About
-                </Navlink>
-            </Navbar>
-                <HamburgerHolder>
-                    <img src={Hamburger} alt="mobile-menu" height={35} />
-                </HamburgerHolder>
-            </HeaderContainer>
-        </HeaderWrapper>
-    );
+          </Navlink>
+        </Navbar>
+        <HamburgerHolder onClick={onMenuClick}>
+          <img src={Hamburger} alt="mobile-menu" height={35} />
+        </HamburgerHolder>
+      </HeaderContainer>
+    </HeaderWrapper>
+  );
 }
