@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Nikon from '../assets/nikon.png';
-import Mits from '../assets/mitsubushi.png';
-import SS from '../assets/shutterstock-.png';
-import Disney from '../assets/disney.png';
-import Netflix from '../assets/netflix.svg'
+import Nikon from "../assets/nikon.png";
+import Mits from "../assets/mitsubushi.png";
+import SS from "../assets/shutterstock-.png";
+import Disney from "../assets/disney.png";
+import Netflix from "../assets/netflix.svg";
 
 const Container = styled.div`
     display: grid;
@@ -38,26 +38,26 @@ const Icon = styled.img`
 `;
 
 export function Partnerships() {
-    return (
-        <Container>
-            <TitleText>Our <br />partnerships</TitleText>
-            <LogosContainer>
-                <div>
-                    <Icon src={Nikon} />
-                </div>
-                <div>
-                    <Icon src={Mits} />
-                </div>
-                <div>
-                    <Icon src={SS} />
-                </div>
-                <div>
-                    <Icon src={Disney} />
-                </div>
-                <div>
-                    <Icon src={Netflix} />
-                </div>
-            </LogosContainer>
-        </Container>
-    );
+  return (
+    <Container>
+      <TitleText>Our <br />partnerships</TitleText>
+      <LogosContainer>
+        <div>
+          <Icon src={Nikon} />
+        </div>
+        <div>
+          <Icon src={Mits} />
+        </div>
+        <div>
+          <Icon src={SS} />
+        </div>
+        <div>
+          <Icon src={Disney} />
+        </div>
+        <div>
+          <Icon src={Netflix} />
+        </div>
+      </LogosContainer>
+    </Container>
+  );
 }

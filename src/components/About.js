@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import About from '../assets/about.jpg';
+import About from "../assets/about.jpg";
 
 const Container = styled.div`
     display: grid;
@@ -24,16 +24,20 @@ const ImageHolder = styled.div`
     align-items: center;
 `;
 
+const Description = styled.div`
+    margin-left: 20px;
+`;
+
 export function AboutUs() {
-    return (
-        <Container id="about">
-            <div>
-            <TitleText>About us</TitleText>
-            <p>Introducing Aarvam Tech Solutions: Young, talented, and driven to win. Founded by successful entrepreneurs, we unleash success through innovative tech solutions. With fresh perspectives and boundless energy, we push boundaries and achieve remarkable results. Our team of experts specializes in technology, business, engineering, career, and software. We immerse ourselves in your vision, developing customized strategies for triumph. Leveraging the latest technologies, we help businesses achieve unparalleled growth and surpass the competition. Join us on a journey of innovation, growth, and triumph. Experience the winning drive that sets us apart.</p>
-            </div>
-            <ImageHolder>
-            <img src={About} alt="about-us" width="90%" />
-            </ImageHolder>
-        </Container>
-    );
+  return (
+    <Container id="about">
+      <Description>
+        <TitleText>About us</TitleText>
+        <p>Introducing Aarvam Tech Solutions: Young, talented, and driven to win. Founded by successful entrepreneurs, we unleash success through innovative tech solutions. With fresh perspectives and boundless energy, we push boundaries and achieve remarkable results. Our team of experts specializes in technology, business, engineering, career, and software. We immerse ourselves in your vision, developing customized strategies for triumph. Leveraging the latest technologies, we help businesses achieve unparalleled growth and surpass the competition. Join us on a journey of innovation, growth, and triumph. Experience the winning drive that sets us apart.</p>
+      </Description>
+      <ImageHolder>
+        <img src={About} alt="about-us" width="90%" />
+      </ImageHolder>
+    </Container>
+  );
 }

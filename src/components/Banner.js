@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BannerImage from '../assets/banner.jpg'
-import Typewriter from 'typewriter-effect';
+import BannerImage from "../assets/banner.jpg";
+import Typewriter from "typewriter-effect";
 import { FlexBox } from "./common-styles";
 
 const BannerText = styled.p`
@@ -52,21 +52,21 @@ const Image = styled.img`
 `;
 
 export function Banner() {
-    return (
-        <BannerBlock height="100vh" padding="0 0 85px 0">
-            <BannerText>Your competitive <br/> advantage <br />
-                <TypewriterBlock>
-                in 
-                <Typewriter
-                    options={{
-                        strings: ['engineering', 'career', 'software'],
-                        autoStart: true,
-                        loop: true,
-                    }}
-                    />
-                </TypewriterBlock>
-            </BannerText>
-            <Image src={BannerImage} />
-        </BannerBlock>
-    );
-} 
+  return (
+    <BannerBlock height="100vh" padding="0 0 85px 0">
+      <BannerText>Your competitive <br/> advantage <br />
+        <TypewriterBlock>
+                in
+          <Typewriter
+            options={{
+              strings: ["engineering", "career", "software"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </TypewriterBlock>
+      </BannerText>
+      <Image src={BannerImage} />
+    </BannerBlock>
+  );
+}

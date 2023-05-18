@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import Linkedin from '../assets/linkedin.svg';
-import Facebook from '../assets/facebook.svg';
-import Instagram from '../assets/instagram.svg';
+import Linkedin from "../assets/linkedin.svg";
+import Facebook from "../assets/facebook.svg";
+import Instagram from "../assets/instagram.svg";
 import { FlexBox } from "./common-styles";
+import { useCallback } from "react";
 
 
 const FooterWrapper = styled.footer`
@@ -39,18 +40,22 @@ const IconWrapper = styled.div`
 `;
 
 export function Footer() {
-    return (
-        <FooterWrapper>
-            <CopyrightText>© 2023 Aarvam Technology Solutions.Inc. All rights reserved.</CopyrightText>
-            <FlexBox alignItems="center">
-                <FollowUsText>Follow us on:</FollowUsText>
-                <IconWrapper>
 
-                <Icon src={Linkedin} />
-                <Icon src={Facebook} />
-                <Icon src={Instagram} />
-                </IconWrapper>
-            </FlexBox>
-        </FooterWrapper>
-    );
+  const onLinkedInClick = useCallback(() => {
+    window.open("https://www.linkedin.com/company/aarvamtechsolutions/");
+  }, []);
+  return (
+    <FooterWrapper>
+      <CopyrightText>© 2023 Aarvam Technology Solutions.Inc. All rights reserved.</CopyrightText>
+      <FlexBox alignItems="center">
+        <FollowUsText>Follow us on:</FollowUsText>
+        <IconWrapper>
+
+          <Icon src={Linkedin} onClick={onLinkedInClick} />
+          <Icon src={Facebook} />
+          <Icon src={Instagram} />
+        </IconWrapper>
+      </FlexBox>
+    </FooterWrapper>
+  );
 }
