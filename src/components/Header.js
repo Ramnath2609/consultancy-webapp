@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Logo from '../assets/logo.jpeg';
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FlexBox } from "./common-styles";
 import Hamburger from '../assets/hamburger.svg'
 
@@ -28,7 +29,7 @@ const Navbar = styled.nav`
     }
 `;
 
-const Navlink = styled(Link)`
+const Navlink = styled(HashLink)`
     display: inline-flex;
     text-decoration: none;
     color: #191919;
@@ -46,10 +47,8 @@ const HeaderContainer = styled.div`
     transition: padding .3s ease-in-out;
     margin: 0 auto;
     max-width: 1110px;
-    padding: 0 15px;
-    padding-bottom: 0;
-    padding-right: 5px;
-    padding-top: 35px;
+    padding: 15px 15px;
+    box-sizing: border-box;
 `;
 
 const HamburgerHolder = styled(FlexBox)`
@@ -73,16 +72,16 @@ export function Header() {
                 <h2>aarvam</h2>
             </FlexBox>
             <Navbar>
-                <Navlink to="#services">
+                <Navlink smooth to="#services">
                     Services
                 </Navlink>
-                <Navlink to="#technologies">
+                <Navlink smooth to="#technologies">
                     Technologies
                 </Navlink>
-                <Navlink to="#contact">
+                <Navlink smooth to="#contact">
                     Contact
                 </Navlink>
-                <Navlink to="#about">
+                <Navlink smooth to="#about">
                     About
                 </Navlink>
             </Navbar>

@@ -26,7 +26,7 @@ const ImageHolder = styled.div`
 
 export function AboutUs() {
     return (
-        <Container>
+        <Container id="about">
             <div>
             <TitleText>About us</TitleText>
             <p>Introducing Aarvam Tech Solutions: Young, talented, and driven to win. Founded by successful entrepreneurs, we unleash success through innovative tech solutions. With fresh perspectives and boundless energy, we push boundaries and achieve remarkable results. Our team of experts specializes in technology, business, engineering, career, and software. We immerse ourselves in your vision, developing customized strategies for triumph. Leveraging the latest technologies, we help businesses achieve unparalleled growth and surpass the competition. Join us on a journey of innovation, growth, and triumph. Experience the winning drive that sets us apart.</p>

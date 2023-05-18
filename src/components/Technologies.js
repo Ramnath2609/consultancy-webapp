@@ -124,7 +124,7 @@ export function Technologies() {
     }, []);
 
     return (
-        <ServicesWrapper>
+        <ServicesWrapper id="technologies">
             <Container>
             <HeaderText>Technologies</HeaderText>
             <FlexBox height="100%" justifyContent="space-between" alignItems="flex-start">

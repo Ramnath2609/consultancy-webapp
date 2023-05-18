@@ -120,7 +120,7 @@ const ImageBlock = styled(FlexBox)`
 
 export function ContactUs() {
     return (
-        <ContactUsWrapper>
+        <ContactUsWrapper id='contact'>
             <FormBlock>
                 <Wrapper>
                 <p>Start a conversation</p>
