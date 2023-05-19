@@ -14,6 +14,9 @@ const BannerText = styled.p`
     @media (max-width: 768px) {
         font-size: 36px;
     }
+    @media (max-width: 500px) {
+        font-size: 30px;
+    }
 `;
 
 const TypewriterBlock = styled.span`

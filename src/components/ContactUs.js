@@ -85,7 +85,7 @@ const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
-    width: 430px;
+    max-width: 430px;
     padding: 20px;
 `;
 

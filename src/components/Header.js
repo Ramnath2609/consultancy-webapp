@@ -11,7 +11,7 @@ const HeaderWrapper = styled.header`
     position: fixed;
     top: 0;
     transition: transform .3s ease-out;
-    width: 100%;
+    width: 100vw;
     z-index: 100;
 `;
 
