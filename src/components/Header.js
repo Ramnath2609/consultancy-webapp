@@ -4,6 +4,7 @@ import Logo from "../assets/logo.jpeg";
 import { HashLink } from "react-router-hash-link";
 import { FlexBox } from "./common-styles";
 import Hamburger from "../assets/hamburger.svg";
+import Close from "../assets/close.svg";
 
 const HeaderWrapper = styled.header`
     background-color: #fff;
@@ -40,8 +41,13 @@ const mobileMenuSnippet = css`
     left: 0;
     box-shadow: 0px 5px 5px 5px #eee;
     background-color: #fff;
+    animation: navmove 0.5s;
     > a {
         padding: 14px;
+    }
+    @keyframes navmove {
+      from {top: 0px;}
+      to {top: 100px;}
     }
 `;
 
@@ -106,7 +112,7 @@ export function Header() {
           </Navlink>
         </Navbar>
         <HamburgerHolder onClick={onMenuClick}>
-          <img src={Hamburger} alt="mobile-menu" height={35} />
+          <img src={isMobileMenuOpen ? Close : Hamburger} alt="mobile-menu" height={30} />
         </HamburgerHolder>
       </HeaderContainer>
     </HeaderWrapper>
