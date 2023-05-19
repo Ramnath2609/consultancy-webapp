@@ -39,6 +39,7 @@ const mobileMenuSnippet = css`
     top: 100px;
     left: 0;
     box-shadow: 0px 5px 5px 5px #eee;
+    background-color: #fff;
     > a {
         padding: 14px;
     }

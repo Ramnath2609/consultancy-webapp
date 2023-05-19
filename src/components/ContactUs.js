@@ -7,6 +7,9 @@ const ContactUsWrapper = styled(GridLayout)`
     grid-template: 100% / 50% 50%;
     justify-content: center;
     background-color: #bff0ff;
+    @media (max-width: 600px) {
+      grid-template: 100% / 100%;
+    }
 `;
 
 const FormBlock = styled.div`
@@ -114,6 +117,9 @@ const ImageBlock = styled(FlexBox)`
     justify-content: center;
     > img {
         width: 50%;
+    }
+    @media (max-width: 600px) {
+      display: none;
     }
 `;
 

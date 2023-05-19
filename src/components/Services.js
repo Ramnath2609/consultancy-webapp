@@ -1,14 +1,16 @@
+/* eslint-disable no-unused-vars */
 import styled from "styled-components";
 import { FlexBox } from "./common-styles";
 import { servicesData } from "../data";
 import Arrow from "../assets/arrow.png";
 import { useCallback, useState } from "react";
+import { Accordion } from "./Accordion";
 
 const ServicesWrapper = styled.div`
     padding: 50px 15px 0;
     color: #fff;
     background-color: #00c2ff;
-    height: 685px;
+    min-height: 685px;
     margin: 0 auto;
 `;
 
@@ -16,6 +18,9 @@ const HeaderText = styled.h2`
     font-size: 64px;
     font-weight: 700;
     margin-bottom: 30px;
+    @media (max-width: 600px) {
+      font-size: 44px;
+    }
 `;
 
 const ButtonsContainer = styled.div`
@@ -115,6 +120,29 @@ const ArrowImage = styled.img`
     width: 20px;
 `;
 
+export const MobileAccordion = styled.div`
+  display: none;
+  @media (max-width: 600px) {
+    display: block;
+    margin-top: 60px;
+  }
+`;
+
+export const TabContainer = styled(FlexBox)`
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const MobileDescription = styled.p`
+  display: none;
+  line-height: 2;
+  @media (max-width: 600px) {
+    display: block;
+  }
+  color: ${({ $color }) => ($color ? $color : "#fff")};
+`;
+
 export function Services() {
   const [activeTab, setActiveTab] = useState(servicesData[0]);
 
@@ -127,7 +155,7 @@ export function Services() {
     <ServicesWrapper id="services">
       <Container>
         <HeaderText>Our Services</HeaderText>
-        <FlexBox height="100%" justifyContent="space-between" alignItems="flex-start">
+        <TabContainer height="100%" justifyContent="space-between" alignItems="flex-start">
           <ImageBlock flexDirection="column" height="100%" alignItems="flex-start">
             <ButtonsContainer>
               {activeTab.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
@@ -145,7 +173,11 @@ export function Services() {
               );
             })}
           </VerticalTabsWrapper>
-        </FlexBox>
+        </TabContainer>
+        <MobileDescription>Aarvam revolutionises the process of digitization by incorporating individualization. Our digital strategy services are practical, firmly based in reality, and aligned with our clients&apos; business objectives. By creating bespoke digital transformation strategies, we generate tangible business benefits.</MobileDescription>
+        <MobileAccordion>
+          {servicesData.map((i) => <Accordion tagColor="#bff0ff" color="#00c2ff" key={i.title} title={i.title} content={i.description} tags={i.tags} />)}
+        </MobileAccordion>
       </Container>
     </ServicesWrapper>
   );

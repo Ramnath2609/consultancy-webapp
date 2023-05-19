@@ -3,12 +3,14 @@ import { FlexBox } from "./common-styles";
 import { technologiesData } from "../data";
 import Arrow from "../assets/white-arrow.png";
 import { useCallback, useState } from "react";
+import { MobileAccordion, MobileDescription, TabContainer } from "./Services";
+import { Accordion } from "./Accordion";
 
 const ServicesWrapper = styled.div`
     padding: 50px 15px 0;
     color: #191919;
     background-color: #fcb622;
-    height: 685px;
+    min-height: 685px;
     margin: 0 auto;
 `;
 
@@ -16,6 +18,9 @@ const HeaderText = styled.h2`
     font-size: 64px;
     font-weight: 700;
     margin-bottom: 30px;
+    @media (max-width: 600px) {
+      font-size: 44px;
+    }
 `;
 
 const ButtonsContainer = styled.div`
@@ -127,7 +132,7 @@ export function Technologies() {
     <ServicesWrapper id="technologies">
       <Container>
         <HeaderText>Technologies</HeaderText>
-        <FlexBox height="100%" justifyContent="space-between" alignItems="flex-start">
+        <TabContainer height="100%" justifyContent="space-between" alignItems="flex-start">
           <ImageBlock flexDirection="column" height="100%" alignItems="flex-start">
             <ButtonsContainer>
               {activeTab.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
@@ -145,7 +150,13 @@ export function Technologies() {
               );
             })}
           </VerticalTabsWrapper>
-        </FlexBox>
+        </TabContainer>
+        <MobileDescription $color="#191919">
+        At Aarvam tech solutions, we stay at the forefront of cutting-edge technologies to help our clients achieve their business goals and drive innovation. Our team of experienced consultants is well-versed in the latest advancements across various industries. We leverage these technologies to deliver tailored solutions that transform businesses and accelerate growth.
+        </MobileDescription>
+        <MobileAccordion>
+          {technologiesData.map((i) => <Accordion tagColor="#feedc8" color="#fcb622" key={i.title} title={i.title} content={i.description} tags={i.tags} />)}
+        </MobileAccordion>
       </Container>
     </ServicesWrapper>
   );
