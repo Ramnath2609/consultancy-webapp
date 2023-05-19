@@ -100,6 +100,9 @@ const ImageBlock = styled(FlexBox)`
 const Container = styled.div`
     max-width: 1110px;
     margin: 0 auto;
+    @media (max-width: 600px) {
+      padding-bottom: 30px;
+    }
 `;
 
 const IconHolder = styled.div`

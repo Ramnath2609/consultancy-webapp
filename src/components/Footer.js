@@ -13,6 +13,13 @@ const FooterWrapper = styled.footer`
     height: 100px;
     margin: 0 50px;
     background-color: #fff;
+    @media (max-width: 500px) {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column-reverse;
+      height: 150px;
+    }
 `;
 
 const CopyrightText = styled.p`
@@ -26,6 +33,9 @@ const Icon = styled.img`
     transition: filter .2s ease-in-out;
     &:hover {
         filter: grayscale(0);
+    }
+    @media (max-width: 500px) {
+      font-size: 14px;
     }
 `;
 
@@ -47,10 +57,9 @@ export function Footer() {
   return (
     <FooterWrapper>
       <CopyrightText>© 2023 Aarvam Technology Solutions.Inc. All rights reserved.</CopyrightText>
-      <FlexBox alignItems="center">
+      <FlexBox alignItems="center" height="auto" margin="12px 0">
         <FollowUsText>Follow us on:</FollowUsText>
         <IconWrapper>
-
           <Icon src={Linkedin} onClick={onLinkedInClick} />
           <Icon src={Facebook} />
           <Icon src={Instagram} />

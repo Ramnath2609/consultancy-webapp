@@ -3,7 +3,7 @@ import { FlexBox, GridLayout } from "./common-styles";
 import Contact from "../assets/contact.jpg";
 
 const ContactUsWrapper = styled(GridLayout)`
-    height: 550px;
+    height: 600px;
     grid-template: 100% / 50% 50%;
     justify-content: center;
     background-color: #bff0ff;
@@ -15,29 +15,6 @@ const ContactUsWrapper = styled(GridLayout)`
 const FormBlock = styled.div`
     width: 100%;
     background-color: #bff0ff;
-`;
-
-const StyledLabel = styled.label`
-    font-family: Prompt,Montserrat,sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    left: 25px;
-    line-height: 1.5625;
-    padding: 0;
-    pointer-events: none;
-    top: 30px;
-    transform: translateY(-50%);
-    z-index: 0;
-    color: rgba(25,25,25,.5);
-    display: block;
-    height: auto;
-    margin: 0;
-    max-width: calc(100% - 40px);
-    overflow: hidden;
-    position: absolute;
-    text-overflow: ellipsis;
-    transition: all .3s ease-in-out;
-    white-space: nowrap;
 `;
 
 const StyledInput = styled.input`
@@ -59,20 +36,13 @@ const StyledInput = styled.input`
         border-color: #dde1e6;
         box-shadow: 0 1px 3px rgba(0,0,0,.08);
         color: #0e0f11;
-        ${StyledLabel} {
-            top: 0;
-            z-index: -1;
-            left: 20;
-            padding: 14px 0 2px;
-        }
-        
     }
 `;
 
 const FieldWrapper = styled.div`
     display: block;
     position: relative;
-    height: 60px;
+    min-height: 60px;
     margin-bottom: 20px;
 `;
 
@@ -99,7 +69,7 @@ const Button = styled.button`
     font-family: Prompt,Montserrat,sans-serif;
     font: 500 16px/1 Prompt,Montserrat,sans-serif;
     padding: 14px 45px;
-    margin-top: 45px;
+    margin-top: 15px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -123,6 +93,29 @@ const ImageBlock = styled(FlexBox)`
     }
 `;
 
+const StyledTextArea = styled.textarea`
+    background-color: #e6f9ff;
+    border: 1px solid #bff0ff;
+    border-radius: 10px;
+    color: #0e0f11;
+    font-family: Prompt,Montserrat,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 60px;
+    line-height: 1.5625;
+    padding: 15px;
+    box-sizing: border-box;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    &:focus {
+        background-color: #f9fafb;
+        border-color: #dde1e6;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08);
+        color: #0e0f11;
+    }
+`;
 
 export function ContactUs() {
   return (
@@ -133,16 +126,13 @@ export function ContactUs() {
           <p>We’d like to hear from you. Use the contact form below and we’ll get back to you shortly.</p>
           <FullHeightForm>
             <FieldWrapper>
-              <StyledLabel htmlFor='fullName'><span>Full name</span></StyledLabel>
-              <StyledInput type='text' name="fullName" />
+              <StyledInput type='text' placeholder="Full name" name="fullName" />
             </FieldWrapper>
             <FieldWrapper>
-              <StyledLabel htmlFor='emailAddress'><span>Email address</span></StyledLabel>
-              <StyledInput type='text' name="emailAddress" />
+              <StyledInput type='text' placeholder="Email Address" name="emailAddress" />
             </FieldWrapper>
             <FieldWrapper>
-              <StyledLabel htmlFor='message'><span>Message</span></StyledLabel>
-              <StyledInput type='text' name="message" />
+              <StyledTextArea placeholder="Message" name="message" rows={5} />
             </FieldWrapper>
             <FieldWrapper>
               <Button>Send</Button>
