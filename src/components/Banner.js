@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BannerImage from "../assets/banner.jpg";
+import BannerImage from "../assets/banner.webp";
 import Typewriter from "typewriter-effect";
 import { FlexBox } from "./common-styles";
 
@@ -79,7 +79,7 @@ export function Banner() {
           />
         </TypewriterBlock>
       </BannerText>
-      <Image src={BannerImage} />
+      <Image src={BannerImage} alt="banner-image" loading="eager" />
     </BannerBlock>
   );
 }

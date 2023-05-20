@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import styled, { css } from "styled-components";
-import Logo from "../assets/logo.jpeg";
+import Logo from "../assets/logo.webp";
 import { HashLink } from "react-router-hash-link";
 import { FlexBox } from "./common-styles";
 import Hamburger from "../assets/hamburger.svg";
