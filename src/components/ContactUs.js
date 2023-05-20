@@ -124,7 +124,8 @@ export function ContactUs() {
         <Wrapper>
           <p>Start a conversation</p>
           <p>We’d like to hear from you. Use the contact form below and we’ll get back to you shortly.</p>
-          <FullHeightForm>
+          <FullHeightForm name="contact" method="POST">
+            <input type="hidden" name="form-name" value="contact" />
             <FieldWrapper>
               <StyledInput type='text' placeholder="Full name" name="fullName" />
             </FieldWrapper>
