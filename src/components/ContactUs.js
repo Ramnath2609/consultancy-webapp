@@ -127,10 +127,10 @@ export function ContactUs() {
           <FullHeightForm name="contact" method="POST">
             <input type="hidden" name="form-name" value="contact" />
             <FieldWrapper>
-              <StyledInput type='text' placeholder="Full name" name="fullName" />
+              <StyledInput type='text' required placeholder="Full name" name="fullName" />
             </FieldWrapper>
             <FieldWrapper>
-              <StyledInput type='text' placeholder="Email Address" name="emailAddress" />
+              <StyledInput type='text' required placeholder="Email Address" name="emailAddress" />
             </FieldWrapper>
             <FieldWrapper>
               <StyledTextArea placeholder="Message" name="message" rows={5} />
