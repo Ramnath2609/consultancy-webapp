@@ -250,7 +250,7 @@ export function Resume() {
             <FlexBox height="auto" flexDirection="column">
               <AboutText height="auto" flexDirection="column" alignItems="start">
                 <Styledh2>About me</Styledh2>
-                <p>I am a UX designer with interest towards designing interactive websites. User interaction is the driving force for traffic towards a website.</p>
+                <p>I am a UX designer with interest towards designing interactive websites. User interaction is the driving force for traffic towards a website. So, I design for websites that drive traffic as well as provide good user response as well.</p>
               </AboutText>
               <StyledUL>
                 {aboutItems.map(({ label, text, Icon }, idx) => (
