@@ -250,7 +250,7 @@ export function Resume() {
             <FlexBox height="auto" flexDirection="column">
               <AboutText height="auto" flexDirection="column" alignItems="start">
                 <Styledh2>About me</Styledh2>
-                <p>Use this bio section as your way of describing yourself and saying what you do, what technologies you like to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing in.</p>
+                <p>I am a UX designer with interest towards designing interactive websites.</p>
               </AboutText>
               <StyledUL>
                 {aboutItems.map(({ label, text, Icon }, idx) => (
