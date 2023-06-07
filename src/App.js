@@ -1,21 +1,15 @@
-import { Header, Services, ContactUs, Technologies, Footer, AboutUs } from "./components";
-import { BrowserRouter } from "react-router-dom";
-import { Banner } from "./components/Banner";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Resume } from "./pages/Resume";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-        <main>
-          <Banner />
-          <Services />
-          <Technologies />
-          <AboutUs />
-          <ContactUs />
-          <Footer />
-        </main>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/resume" element={<Resume />} />
+      </Routes>
     </BrowserRouter>
   );
 }
